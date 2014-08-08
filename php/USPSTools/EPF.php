@@ -12,7 +12,7 @@
  * @link https://epf.usps.gov/
  * @link https://ribbs.usps.gov/
  *
- * @author Ben Dauphinee <me@bendauphinee.com>
+ * @author Ben Dauphinee <ben.dauphinee@cpap.com>
  * @link https://github.com/cpapdotcom/USPSTools
  * @version 1.0
  * @license MIT
