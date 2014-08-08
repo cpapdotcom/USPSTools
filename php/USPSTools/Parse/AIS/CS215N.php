@@ -19,6 +19,9 @@ namespace USPSTools\Parse\AIS;
  */
 class CS215N extends \USPSTools\Parse
 {
+    /**
+     * A variable to store the length of a line for this file type.
+     */
     protected static $lineLength = 129;
 
     /**

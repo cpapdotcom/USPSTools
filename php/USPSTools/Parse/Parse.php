@@ -19,6 +19,9 @@ namespace USPSTools;
  */
 class Parse
 {
+    /**
+     * A variable to store the length of a line for each file type.
+     */
     protected static $lineLength = 0;
 
     /**
