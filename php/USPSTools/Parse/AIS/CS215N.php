@@ -54,7 +54,7 @@ class CS215N extends \USPSTools\Parse
 
         switch ($return['recordType']) {
             case 'A':   // Alias type records
-                $return['record']['Zip']                                      = trim(substr($line, 1, 6));
+                $return['record']['Zip']                                      = trim(substr($line, 1, 5));
                 $return['record']['AliasStreetAbbreviation']                  = trim(substr($line, 6, 2));
                 $return['record']['AliasStreetName']                          = trim(substr($line, 8, 28));
                 $return['record']['AliasStreetSuffixAbbreviation']            = trim(substr($line, 36, 4));
