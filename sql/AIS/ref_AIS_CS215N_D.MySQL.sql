@@ -1,8 +1,13 @@
 -- MySQL Table Structure USPS AIS CS215N
 -- This database table contains the data generated from product AIS CS215N
 -- Record Type: [D]etail
+--
+-- Author: Ben Dauphinee <ben.dauphinee@cpap.com>
+-- GitHub: https://github.com/cpapdotcom/USPSTools
+-- Version: 1.0
+-- License: MIT
 
-CREATE TABLE `ref_AIS_CS215N` (
+CREATE TABLE `ref_AIS_CS215N_D` (
   `CopyrightCode` char(1) DEFAULT NULL,
   `Zip` int(11) DEFAULT NULL,
   `CityStateKey` varchar(6) DEFAULT NULL,
