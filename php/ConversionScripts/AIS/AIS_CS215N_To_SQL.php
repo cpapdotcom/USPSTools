@@ -1,11 +1,7 @@
 #!/usr/local/bin/php
 <?php
 /**
- * This script can be used to convert raw AIS CS215N text files into MySQL type SQL INSERT statements.
- *
- * For more information:
- * @link https://epf.usps.gov/
- * @link https://ribbs.usps.gov/
+ * USPSTools Library provided by CPAP.com
  *
  * @author Ben Dauphinee <ben.dauphinee@cpap.com>
  * @link https://github.com/cpapdotcom/USPSTools
@@ -13,6 +9,9 @@
  * @license MIT
  */
 
+/**
+ * This script can be used to convert raw AIS CS215N text files into MySQL type SQL INSERT statements.
+ */
 require_once '../../USPSTools/Parse/Parse.php';
 require_once '../../USPSTools/Parse/AIS/CS215N.php';
 

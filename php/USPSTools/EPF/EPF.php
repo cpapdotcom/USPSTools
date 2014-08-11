@@ -1,16 +1,6 @@
 <?php
 /**
- * This class is for managing USPS Electronic Product Fulfillment (EPF) interactions.
- *
- * When you have a USPS product you have purchased, you can sign up for digital delivery services.
- * This class allows you to automate those interactions via the REST API they provide, instead of
- * manually downloading updated files when emailed.
- *
- * USPS EPF Supported: v1.04.2 - 2014-04-30
- *
- * For more information:
- * @link https://epf.usps.gov/
- * @link https://ribbs.usps.gov/
+ * USPSTools Library provided by CPAP.com
  *
  * @author Ben Dauphinee <ben.dauphinee@cpap.com>
  * @link https://github.com/cpapdotcom/USPSTools
@@ -22,6 +12,12 @@
 
 /**
  * This class is for managing USPS Electronic Product Fulfillment (EPF) interactions.
+ *
+ * When you have a USPS product you have purchased, you can sign up for digital delivery services.
+ * This class allows you to automate those interactions via the REST API they provide, instead of
+ * manually downloading updated files when emailed.
+ *
+ * USPS EPF Supported: v1.04.2 - 2014-04-30
  */
 class EPF
 {

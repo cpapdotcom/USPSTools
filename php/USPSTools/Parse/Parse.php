@@ -1,10 +1,6 @@
 <?php
 /**
- * This class the base class for parsing USPS files.
- *
- * For more information:
- * @link https://epf.usps.gov/
- * @link https://ribbs.usps.gov/
+ * USPSTools Library provided by CPAP.com
  *
  * @author Ben Dauphinee <ben.dauphinee@cpap.com>
  * @link https://github.com/cpapdotcom/USPSTools

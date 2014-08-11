@@ -1,10 +1,6 @@
 <?php
 /**
- * This class is for parsing USPS AIS product CS215N, known as "City State National".
- *
- * For more information:
- * @link https://epf.usps.gov/
- * @link https://ribbs.usps.gov/
+ * USPSTools Library provided by CPAP.com
  *
  * @author Ben Dauphinee <ben.dauphinee@cpap.com>
  * @link https://github.com/cpapdotcom/USPSTools
