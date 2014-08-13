@@ -8,7 +8,7 @@
  * @license MIT
  */
 
- namespace USPSTools;
+namespace USPSTools;
 
 /**
  * This class is for managing USPS Electronic Product Fulfillment (EPF) interactions.
@@ -147,14 +147,16 @@ class EPF
         $newestFile = $this->findNewestFile($productCode, $productId, $status, $fulfilled);
 
         if (empty($newestFile) == true) {
-            throw new Exception('No file available to download');
+            throw new EPF\NoFileToDownloadException('No file available to download');
         }
 
         // Download the file
         $downloadInfo = $this->downloadEpf($newestFile['fileid'], $newestFile['filepath']);
 
         // Set this file as completed download
-        $this->setStatus($newestFile['fileid'], 'C');
+        if ($downloadInfo['responseData']['response'] == 'success') {
+            $this->setStatus($newestFile['fileid'], 'C');
+        }
 
         // Pass back the download info
         return $downloadInfo;
@@ -174,19 +176,21 @@ class EPF
     public function findNewestFile ($productCode, $productId, $status = '', $fulfilled = '')
     {
         // Get a list of files for this product
-        $fileList = $this->listFiles($productCode, $productId, $status, $fulfilled);
+        $jsonResponse = $this->listFiles($productCode, $productId, $status, $fulfilled);
 
         // Init some vars we need
         $latestFileDate = 0;
         $latestFile = array();
 
-        // Loop over the list of files and find the newest dated one
-        foreach ($fileList as $thisFile) {
-            $thisTimestamp = strtotime($thisFile['fulfilled']);
+        if (empty($jsonResponse['responseData']['fileList']) == false) {
+            // Loop over the list of files and find the newest dated one
+            foreach ($jsonResponse['responseData']['fileList'] as $thisFile) {
+                $thisTimestamp = strtotime($thisFile['fulfilled']);
 
-            if ($thisTimestamp > $latestFileDate) {
-                $latestFileDate = $thisTimestamp;
-                $latestFile = $thisFile;
+                if ($thisTimestamp > $latestFileDate) {
+                    $latestFileDate = $thisTimestamp;
+                    $latestFile = $thisFile;
+                }
             }
         }
 
@@ -234,7 +238,7 @@ class EPF
         }
 
         // Return the file list
-        return $jsonResponse['responseData']['fileList'];
+        return $jsonResponse;
     }
 
     /**
