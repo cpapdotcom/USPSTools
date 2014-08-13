@@ -151,6 +151,20 @@ while ($loopRead == true) {
     unset($records);
 }
 
+$outStat = '-- USPS AIS CS215N TYPE ' . $cmdOptions['r'] . ' SQL' . "\n";
+$outStat .= '-- Date Generated: ' . date('Y-m-d H:i:s T (O)') . "\n";
+$outStat .= '-- Records: ' . $foundLines . "\n";
+$outStat .= '-- Last Line: ' . $readStartLine . "\n";
+
+// Write out the stats to the file as comments
+if (empty($outputFile) == true) {
+    echo $outStat;
+} else {
+    $fp = fopen($outputFile, 'a');
+    fwrite($fp, $outStat);
+    fclose($fp);
+}
+
 // If the command line asked for a return count, echo it out
 if (isset($cmdOptions['return-count'])) {
     echo 'Found: ' . $foundLines . "\n";
