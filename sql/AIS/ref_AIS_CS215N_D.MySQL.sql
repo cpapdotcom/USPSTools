@@ -24,5 +24,9 @@ CREATE TABLE `ref_AIS_CS215N_D` (
   `FinanceNumber` int(11) DEFAULT NULL,
   `StateAbbreviation` varchar(2) DEFAULT NULL,
   `CountyNumber` varchar(3) DEFAULT NULL,
-  `CountyName` varchar(25) DEFAULT NULL
+  `CountyName` varchar(25) DEFAULT NULL,
+  KEY `Zip` (`Zip`),
+  KEY `CityStateName` (`CityStateName`),
+  KEY `StateAbbreviation` (`StateAbbreviation`),
+  KEY `CountyName` (`CountyName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
