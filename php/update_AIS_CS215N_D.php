@@ -62,7 +62,7 @@ try {
 
     try {
         // See if we can download a new file
-        $fileInfo = $uspsEpf->downloadNewestFile('AIS', 'CS215N', 'C');
+        $fileInfo = $uspsEpf->downloadNewestFile('AIS', 'CS215N', 'N');
 
         if ($fileInfo['responseData']['response'] == 'success') {
             $haveNewFile = 1;
