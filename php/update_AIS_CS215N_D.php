@@ -181,5 +181,5 @@ if ($haveNewFile == 1) {
 }
 
 // Send email
-mail(EMAIL_REPORT_TO, 'update_AIS_CS125N Report', $emailText);
+mail(EMAIL_REPORT_TO, 'update_AIS_CS215N Report', $emailText);
 
